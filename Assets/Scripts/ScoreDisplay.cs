@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
     Text scoreText;
-    Score scoreObj;
+    GameSession gameSession;
     // Start is called before the first frame update
     void Start()
     {
         scoreText = GetComponent<Text>();
-        scoreObj = FindObjectOfType<Score>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = scoreObj.GetScore().ToString();
+        scoreText.text = gameSession.GetScore().ToString();
     }
 }
